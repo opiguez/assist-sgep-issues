@@ -1,0 +1,37 @@
+name: Предложить улучшение
+description: Идея, как сделать ассистента удобнее или умнее
+title: "[Идея] "
+labels: ["enhancement"]
+body:
+  - type: dropdown
+    id: area
+    attributes:
+      label: Касается
+      options:
+        - Обработка почты (письма)
+        - Чат сотрудников
+        - Подбор оборудования
+        - CRM / Битрикс24
+        - Другое
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: Какая задача или неудобство
+      description: Что сейчас мешает или чего не хватает
+    validations:
+      required: true
+  - type: textarea
+    id: solution
+    attributes:
+      label: Как хотелось бы
+      description: Предлагаемое решение или пример поведения
+    validations:
+      required: true
+  - type: textarea
+    id: extra
+    attributes:
+      label: Дополнительно
+    validations:
+      required: false

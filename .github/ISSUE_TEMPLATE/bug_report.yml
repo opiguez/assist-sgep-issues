@@ -1,0 +1,62 @@
+name: Сообщить об ошибке
+description: Что-то работает не так — опишите проблему
+title: "[Ошибка] "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Спасибо, что помогаете сделать ассистента лучше.
+        Заполните поля ниже. Не присылайте пароли, токены и ключи.
+  - type: dropdown
+    id: area
+    attributes:
+      label: Где возникла проблема
+      options:
+        - Обработка почты (письма)
+        - Чат сотрудников
+        - Подбор оборудования
+        - CRM / Битрикс24
+        - Другое
+    validations:
+      required: true
+  - type: input
+    id: mailbox
+    attributes:
+      label: Ящик и тема письма
+      description: Если проблема в почтовом треке — укажите ящик и тему письма
+      placeholder: "sale@sgep.ru — «Запрос КП на ИБП»"
+    validations:
+      required: false
+  - type: textarea
+    id: steps
+    attributes:
+      label: Что делали (шаги)
+      description: Последовательность действий перед ошибкой
+      placeholder: |
+        1. Пришло письмо ...
+        2. Ассистент ответил ...
+        3. ...
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Что ожидали
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Что получилось
+      description: Дословный текст ошибки или поведение. Можно приложить скриншот.
+    validations:
+      required: true
+  - type: input
+    id: when
+    attributes:
+      label: Когда это было
+      description: Дата и время (с часовым поясом) — чтобы найти в логах
+      placeholder: "05.10.2026, ~14:30 МСК"
+    validations:
+      required: false
